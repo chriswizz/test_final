@@ -1,8 +1,8 @@
 <?php
-include_once "../Components/head.php";
-include_once "../CrudController.php";
+include_once "Components/head.php";
+include_once 'CrudController.php';
 $crudcontroller = new CrudController();
-$result = $crudcontroller->readCourses();
+$result = $crudcontroller->readData();
 ?>
 
 <div class="container-fluid">
@@ -27,17 +27,17 @@ $result = $crudcontroller->readCourses();
         ?>
 
     <tr>
-      <td><img src="<?php echo $result[$k]["image"]; ?>" alt=""></td>
-      <td><?php echo $result[$k]["course_id"]; ?></td>
-      <td><?php echo $result[$k]["title"]; ?></td>
-      <td><?php echo $result[$k]["description"]; ?></td>
-      <td><?php echo $result[$k]["active"]; ?></td>
-      <td>
-        <a href="courses.php?id=<?php echo $result[$k]['course_id']; ?>"><button class="btn btn-info">Update</button></a>
-      </td>
-      <td>
-        <a href="course-items.php?id=<?php echo $result[$k]['course_id']; ?>"><button class="btn btn-success">Date/Prices</button></a>
-      </td>
+        <td><img src="<?php echo $result[$k]["image"]; ?>" alt=""></td>
+        <td><?php echo $result[$k]["course_id"]; ?></td>
+        <td><?php echo $result[$k]["title"]; ?></td>
+        <td><?php echo $result[$k]["description"]; ?></td>
+        <td><?php echo $result[$k]["active"]; ?></td>
+        <td>
+            <a href="courses.php?<?= 'id={$value["ID"]}'; ?>"><button class="btn btn-info" id="<?php echo $result[$k]["id"]; ?>">Edit</button></a>
+        </td>
+        <td>
+            <button class="btn btn-danger" id="<?php echo $result[$k]["id"]; ?>">Edit</button>
+        </td>
     </tr>
     <?php
     }
@@ -48,5 +48,5 @@ $result = $crudcontroller->readCourses();
 </div>
 
 <?php
-include_once "../Components/footer.php";
+include_once "Components/footer.php";
 ?>
