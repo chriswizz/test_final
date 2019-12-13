@@ -1,8 +1,8 @@
 <?php
-include_once "Components/head.php";
-include_once 'CrudController.php';
+include_once "../Components/head.php";
+include_once "../CrudController.php";
 $crudcontroller = new CrudController();
-$result = $crudcontroller->readData();
+$result = $crudcontroller->readCourses();
 ?>
 
 <h1 class="text-center my-4">Course Dashboard</h1>
@@ -51,5 +51,5 @@ $result = $crudcontroller->readData();
 
 
 <?php
-include_once "Components/footer.php";
+include_once "../Components/footer.php";
 ?>

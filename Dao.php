@@ -2,13 +2,9 @@
 
 class Dao
 {
-
-    private $server = "mysql:host=localhost;dbname=test";
-
+    private $server = "mysql:host=localhost;dbname=codefactory_db";
     private $user = "root";
-
     private $pass = "";
-
     private $options = array(
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
@@ -21,15 +17,12 @@ class Dao
     
     {
         try 
-        {
-            
-            $this->con = new PDO($this->server, $this->user, $this->pass, $this->options);
-            
+        {      
+            $this->con = new PDO($this->server, $this->user, $this->pass, $this->options);    
             return $this->con;
         } 
         catch (PDOException $e) 
-        {
-            
+        {    
             echo "There is some problem in connection: " . $e->getMessage();
         }
     }
