@@ -3,13 +3,49 @@ include_once 'Dao.php';
 
 class CrudController
 {
-    /* Fetch All */
+    /* Fetch all Courses */
     public function readCourses()
     {
         try {  
             $dao = new Dao();      
             $conn = $dao->openConnection();   
             $sql = "SELECT * FROM `courses`";
+            $resource = $conn->query($sql);
+            $result = $resource->fetchAll(PDO::FETCH_ASSOC);
+            $dao->closeConnection();
+        } catch (PDOException $e) {
+            echo "There is some problem in connection: " . $e->getMessage();
+        }
+        if (! empty($result)) {
+            return $result;
+        }
+    }
+
+    /* Fetch one Course */
+    public function readCourse($course_id)
+    {
+        try {  
+            $dao = new Dao();      
+            $conn = $dao->openConnection();   
+            $sql = "SELECT * FROM `courses` WHERE course_id = $course_id";
+            $resource = $conn->query($sql);
+            $result = $resource->fetch(PDO::FETCH_ASSOC);
+            $dao->closeConnection();
+        } catch (PDOException $e) {
+            echo "There is some problem in connection: " . $e->getMessage();
+        }
+        if (! empty($result)) {
+            return $result;
+        }
+    }
+
+    /* Fetch Tags for one Course*/
+    public function readCourseTags($course_id)
+    {
+        try {  
+            $dao = new Dao();      
+            $conn = $dao->openConnection();   
+            $sql = "SELECT * FROM `courses_tags` WHERE fk_course_id = $course_id";
             $resource = $conn->query($sql);
             $result = $resource->fetchAll(PDO::FETCH_ASSOC);
             $dao->closeConnection();
