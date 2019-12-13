@@ -21,7 +21,25 @@ class CrudController
         }
     }
 
-    /* Fetch one Course */
+    /* Fetch all Tags*/
+    public function readTags()
+    {
+        try {  
+            $dao = new Dao();      
+            $conn = $dao->openConnection();   
+            $sql = "SELECT * FROM `tags`";
+            $resource = $conn->query($sql);
+            $result = $resource->fetchAll(PDO::FETCH_ASSOC);
+            $dao->closeConnection();
+        } catch (PDOException $e) {
+            echo "There is some problem in connection: " . $e->getMessage();
+        }
+        if (! empty($result)) {
+            return $result;
+        }
+    }
+
+    /* Fetch single Course */
     public function readCourse($course_id)
     {
         try {  
@@ -39,7 +57,7 @@ class CrudController
         }
     }
 
-    /* Fetch Tags for one Course*/
+    /* Fetch Tags for single Course*/
     public function readCourseTags($course_id)
     {
         try {  
@@ -56,6 +74,25 @@ class CrudController
             return $result;
         }
     }
+
+    /* Fetch Tags for single Course*/
+    public function updateCourseTags($course_id)
+    {
+        try {  
+            $dao = new Dao();      
+            $conn = $dao->openConnection();   
+            $sql = "SELECT * FROM `courses_tags` WHERE fk_course_id = $course_id";
+            $resource = $conn->query($sql);
+            $result = $resource->fetchAll(PDO::FETCH_ASSOC);
+            $dao->closeConnection();
+        } catch (PDOException $e) {
+            echo "There is some problem in connection: " . $e->getMessage();
+        }
+        if (! empty($result)) {
+            return $result;
+        }
+    }
+
 
 
 
