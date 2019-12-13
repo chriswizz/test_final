@@ -5,9 +5,9 @@ $crudcontroller = new CrudController();
 $result = $crudcontroller->readData();
 ?>
 
-<h1>Adminpanel</h1>
+<h1 class="text-center my-4">Course Dashboard</h1>
 
-
+<div class="container-fluid">
 <table class="table">
   <thead class="thead-dark">
     <tr>
@@ -45,6 +45,8 @@ $result = $crudcontroller->readData();
 ?>
   </tbody>
 </table>
+
+</div>
 
 
 
