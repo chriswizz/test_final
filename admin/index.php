@@ -7,17 +7,37 @@ $result = $crudcontroller->readCourses();
 
 <div class="container-fluid">
     <h1 class="text-center my-4">Course Dashboard</h1>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+      <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarSupportedContent">
+          <div class="search-box form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" type="text" autocomplete="off" placeholder="Search Course Title..." />
+              <button class="btn btn-info my-2 my-sm-0" type="submit"><i class="fas fa-search searchButton"></i></button>
+          </div>
+          <div class="form-inline my-2 my-lg-0">
+              <a href='courses.php' class='d-flex text-light'>
+              <button class='btn btn-outline-info my-2 my-sm-0 mx-2' type='button'>
+                  <i class='fas fa-plus-square mr-2'></i>Create New Course</button>
+              </a>
+          </div>
+      </div>
+    </nav>
+
     <table class="table">
         <thead class="thead-dark">
-            <tr>
-                <th scope="col">Image</th>
-                <th scope="col">ID</th>
-                <th scope="col">Title</th>
-                <th scope="col">Description</th>
-                <th scope="col">Show</th>
-                <th scope="col">Update Course</th>
-                <th scope="col">Update Course Item</th>
-            </tr>
+          <tr>
+            <th scope="col">Image</th>
+            <th scope="col">ID</th>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Show</th>
+            <th scope="col">Update Course</th>
+            <th scope="col">Update Course Item</th>
+          </tr>
         </thead>
         <tbody>
 

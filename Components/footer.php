@@ -28,6 +28,7 @@ integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07j
 crossorigin="anonymous"></script>
 <!---JS--->
 <!-- <script type="text/javascript" src="../JS/script.js"></script> -->
+<script type="text/javascript" src="../JS/crudEvent.js"></script>
 </body>
 
 </html>
