@@ -89,9 +89,6 @@ class CrudController
         } catch (PDOException $e) {
             echo "There is some problem in connection: " . $e->getMessage();
         }
-        if (! empty($result)) {
-            return $result;
-        }
     }
 
     /* Delete all Tags for single Course*/
@@ -105,9 +102,6 @@ class CrudController
             $dao->closeConnection();
         } catch (PDOException $e) {
             echo "There is some problem in connection: " . $e->getMessage();
-        }
-        if (! empty($result)) {
-            return $result;
         }
     }
 
@@ -125,9 +119,6 @@ class CrudController
         } catch (PDOException $e) {
             echo "There is some problem in connection: " . $e->getMessage();
         }
-        if (! empty($result)) {
-            return $result;
-        }
     }
 
     /* create single Course*/
@@ -142,9 +133,6 @@ class CrudController
             $dao->closeConnection();
         } catch (PDOException $e) {
             echo "There is some problem in connection: " . $e->getMessage();
-        }
-        if (! empty($result)) {
-            return $result;
         }
     }
 
