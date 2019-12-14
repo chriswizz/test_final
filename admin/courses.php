@@ -3,18 +3,18 @@ $title = "Adminpanel";
 include_once "../Components/head.php";
 include_once "../CrudController.php";
 $crudcontroller = new CrudController();
+$resultTags = $crudcontroller->readTags();
 
 if(isset($_GET['id'])) {
   $id = $_GET['id'];
   $resultCourse = $crudcontroller->readCourse($id);
-  $resultTags = $crudcontroller->readTags($id);
   $resultCourseTags = $crudcontroller->readCourseTags($id);
-  
   foreach ($resultCourseTags as $courseTag) {
     $courseTagIds[] = $courseTag['fk_tag_id'];
   }
 } else {
   $id = '';
+  $courseTagIds = [];
 }
 ?>
 

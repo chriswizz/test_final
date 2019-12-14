@@ -94,18 +94,69 @@ class CrudController
         }
     }
 
-    /* Update Tags for single Course*/
-    public function updateCourseTags($courseId, array $checkedTags)
+    /* Delete all Tags for single Course*/
+    public function deleteCourseTags($courseId)
     {
         try {  
             $dao = new Dao();
             $conn = $dao->openConnection();
-            $sqlDelete = "DELETE FROM `courses_tags` WHERE fk_course_id = $courseId";
-            $conn->query($sqlDelete);
+            $sql = "DELETE FROM `courses_tags` WHERE fk_course_id = $courseId";
+            $conn->query($sql);
+            $dao->closeConnection();
+        } catch (PDOException $e) {
+            echo "There is some problem in connection: " . $e->getMessage();
+        }
+        if (! empty($result)) {
+            return $result;
+        }
+    }
+
+    /* Create Tags for single Course*/
+    public function createCourseTags($courseId, array $checkedTags)
+    {
+        try {  
+            $dao = new Dao();
+            $conn = $dao->openConnection();
             foreach ($checkedTags as $tag) {
-                $sqlInsert = "INSERT INTO `courses_tags` (fk_course_id, fk_tag_id) VALUES ($courseId, $tag)";
-                $conn->query($sqlInsert);
+                $sql = "INSERT INTO `courses_tags` (fk_course_id, fk_tag_id) VALUES ($courseId, $tag)";
+                $conn->query($sql);
             }
+            $dao->closeConnection();
+        } catch (PDOException $e) {
+            echo "There is some problem in connection: " . $e->getMessage();
+        }
+        if (! empty($result)) {
+            return $result;
+        }
+    }
+
+    /* create single Course*/
+    public function createCourse($title, $image, $description, $active)
+    {
+        try {  
+            $dao = new Dao();
+            $conn = $dao->openConnection();
+            $sql = "INSERT INTO `courses` (title, image, description, active)
+                    VALUES ('$title','$image','$description',$active)";
+            $conn->query($sql);
+            $dao->closeConnection();
+        } catch (PDOException $e) {
+            echo "There is some problem in connection: " . $e->getMessage();
+        }
+        if (! empty($result)) {
+            return $result;
+        }
+    }
+
+    /* get latest ID of table*/
+    public function getLatestId($table, $idColumn)
+    {
+        try {  
+            $dao = new Dao();
+            $conn = $dao->openConnection();
+            $sql = "SELECT $idColumn FROM $table ORDER BY $idColumn DESC LIMIT 1";
+            $resource = $conn->query($sql);
+            $result = $resource->fetch(PDO::FETCH_ASSOC);
             $dao->closeConnection();
         } catch (PDOException $e) {
             echo "There is some problem in connection: " . $e->getMessage();
