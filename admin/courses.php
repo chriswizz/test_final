@@ -20,39 +20,39 @@ if(isset($_GET['id'])) {
 
 <div class="container">
   <h2>Details/Update</h2>
-  <form class="form-horizontal" action="/action_page.php">
+  <form class="form-horizontal" action="action_test.php" method="post">
     <div class="form-group">
       <label class="control-label col-sm-2" for="course_id">Course ID:</label>
       <div class="col-sm-10">
-        <input type="number" class="form-control" id="course_id" placeholder="<?php if ($id<>"") echo $resultCourse['course_id']; ?>">
+        <input type="number" class="form-control" name="course_id" id="course_id" value="<?php if ($id<>"") echo $resultCourse['course_id']; ?>">
       </div>
     </div>
 
     <div class="form-group">
       <label class="control-label col-sm-2" for="title">Title:</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="title" placeholder="<?php if ($id<>"") echo $resultCourse['title']; ?>">
+        <input type="text" class="form-control" name="title" id="title" value="<?php if ($id<>"") echo $resultCourse['title']; ?>">
       </div>
     </div>
 
     <div class="form-group">
       <label class="control-label col-sm-2" for="image">Image:</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="image" placeholder="<?php if ($id<>"") echo $resultCourse['image']; ?>">
+        <input type="text" class="form-control" name="image" id="image" value="<?php if ($id<>"") echo $resultCourse['image']; ?>">
       </div>
     </div>
 
     <div class="form-group">
       <label class="control-label col-sm-2" for="description">Description:</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="description" placeholder="<?php if ($id<>"") echo $resultCourse['description']; ?>">
+        <input type="text" class="form-control" name="description" id="description" value="<?php if ($id<>"") echo $resultCourse['description']; ?>">
       </div>
     </div>
 
     <div class="form-group">
       <label class="control-label col-sm-2" for="active">Show Course:</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="active" placeholder="<?php if ($id<>"") echo $resultCourse['active']; ?>">
+        <input type="text" class="form-control" name="active" id="active" value="<?php if ($id<>"") echo $resultCourse['active']; ?>">
       </div>
     </div>
 
@@ -65,7 +65,8 @@ if(isset($_GET['id'])) {
           <label>
             <input
               type="checkbox"
-              name="<?php echo $tag["tag"] ?>"
+              value="<?php echo $tag["tag_id"] ?>"
+              name="checkedTags[]"
               <?php if (in_array($tag["tag_id"], $courseTagIds)) { ?>
               checked="checked"
               <?php } ?>

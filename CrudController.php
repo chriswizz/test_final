@@ -7,8 +7,8 @@ class CrudController
     public function readCourses()
     {
         try {  
-            $dao = new Dao();      
-            $conn = $dao->openConnection();   
+            $dao = new Dao();
+            $conn = $dao->openConnection();
             $sql = "SELECT * FROM `courses`";
             $resource = $conn->query($sql);
             $result = $resource->fetchAll(PDO::FETCH_ASSOC);
@@ -25,8 +25,8 @@ class CrudController
     public function readTags()
     {
         try {  
-            $dao = new Dao();      
-            $conn = $dao->openConnection();   
+            $dao = new Dao();
+            $conn = $dao->openConnection();
             $sql = "SELECT * FROM `tags`";
             $resource = $conn->query($sql);
             $result = $resource->fetchAll(PDO::FETCH_ASSOC);
@@ -40,12 +40,12 @@ class CrudController
     }
 
     /* Fetch single Course */
-    public function readCourse($course_id)
+    public function readCourse($courseId)
     {
         try {  
-            $dao = new Dao();      
-            $conn = $dao->openConnection();   
-            $sql = "SELECT * FROM `courses` WHERE course_id = $course_id";
+            $dao = new Dao();
+            $conn = $dao->openConnection();
+            $sql = "SELECT * FROM `courses` WHERE course_id = $courseId";
             $resource = $conn->query($sql);
             $result = $resource->fetch(PDO::FETCH_ASSOC);
             $dao->closeConnection();
@@ -58,12 +58,12 @@ class CrudController
     }
 
     /* Fetch Tags for single Course*/
-    public function readCourseTags($course_id)
+    public function readCourseTags($courseId)
     {
         try {  
-            $dao = new Dao();      
-            $conn = $dao->openConnection();   
-            $sql = "SELECT * FROM `courses_tags` WHERE fk_course_id = $course_id";
+            $dao = new Dao();
+            $conn = $dao->openConnection();
+            $sql = "SELECT * FROM `courses_tags` WHERE fk_course_id = $courseId";
             $resource = $conn->query($sql);
             $result = $resource->fetchAll(PDO::FETCH_ASSOC);
             $dao->closeConnection();
@@ -75,48 +75,18 @@ class CrudController
         }
     }
 
-    /* Fetch Tags for single Course*/
-    public function updateCourseTags($course_id)
+    /* Update single Course*/
+    public function updateCourse($courseId, $title, $image, $description, $active)
     {
         try {  
-            $dao = new Dao();      
-            $conn = $dao->openConnection();   
-            $sql = "SELECT * FROM `courses_tags` WHERE fk_course_id = $course_id";
-            $resource = $conn->query($sql);
-            $result = $resource->fetchAll(PDO::FETCH_ASSOC);
-            $dao->closeConnection();
-        } catch (PDOException $e) {
-            echo "There is some problem in connection: " . $e->getMessage();
-        }
-        if (! empty($result)) {
-            return $result;
-        }
-    }
-
-
-
-
-
-
-
-    /* Fetch All */
-    public function readData()
-    {
-        try {
-            
             $dao = new Dao();
-            
             $conn = $dao->openConnection();
-            
-            $sql = "SELECT id,title,description, url, category FROM `tb_links` ORDER BY id DESC";
-            
-            $resource = $conn->query($sql);
-            
-            $result = $resource->fetchAll(PDO::FETCH_ASSOC);
-            
+            $sql = "UPDATE `courses`
+                    SET title = '$title', image = '$image', description = '$description', active = $active
+                    WHERE course_id = $courseId";
+            $conn->query($sql);
             $dao->closeConnection();
         } catch (PDOException $e) {
-            
             echo "There is some problem in connection: " . $e->getMessage();
         }
         if (! empty($result)) {
@@ -124,30 +94,35 @@ class CrudController
         }
     }
 
-    /* Fetch Single Record by Id */
-    public function readSingle($id)
+    /* Update Tags for single Course*/
+    public function updateCourseTags($courseId, array $checkedTags)
     {
-        try {
-            
+        try {  
             $dao = new Dao();
-            
             $conn = $dao->openConnection();
-            
-            $sql = "SELECT id,title,description, url, category FROM `tb_links` WHERE id=" . $id . " ORDER BY id DESC";
-            
-            $resource = $conn->query($sql);
-            
-            $result = $resource->fetchAll(PDO::FETCH_ASSOC);
-            
+            $sqlDelete = "DELETE FROM `courses_tags` WHERE fk_course_id = $courseId";
+            $conn->query($sqlDelete);
+            foreach ($checkedTags as $tag) {
+                $sqlInsert = "INSERT INTO `courses_tags` (fk_course_id, fk_tag_id) VALUES ($courseId, $tag)";
+                $conn->query($sqlInsert);
+            }
             $dao->closeConnection();
         } catch (PDOException $e) {
-            
             echo "There is some problem in connection: " . $e->getMessage();
         }
         if (! empty($result)) {
             return $result;
         }
     }
+
+
+
+
+
+
+
+
+
 
     /* Add New Record */
     public function add($formArray)
