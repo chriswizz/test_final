@@ -14,6 +14,6 @@ $result = $crudcontroller->readData();
         <?php require_once "course_card.php" ?>
     </div>
 
-    <?php require_once "modal.php" ?>
+<?php require_once "modal.php" ?>
 
 <?php include_once "../Components/footer.php"?>

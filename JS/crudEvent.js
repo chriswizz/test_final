@@ -34,8 +34,16 @@ $(document).ready(function(){
 			});
 		$("#messageModal").modal('show');
 	});
-
-
-
 });
+
+function loadData() {
+	$.ajax({
+		url: 'read.php',
+		type: 'POST',
+		data: {"type":"all"},
+		success:function(response){
+			$("#container").html(response);
+		}
+	});
+}
 		
