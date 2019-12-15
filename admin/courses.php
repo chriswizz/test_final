@@ -19,6 +19,13 @@ if(isset($_GET['id'])) {
 ?>
 
 <div class="container">
+  <!-- <div id="sucMsg">Msg</div> -->
+  
+  <!-- update only php -->
+  <!-- <form class="form-horizontal" action="action_test.php" method="post"> -->
+
+    <!-- update ajax -->
+<form class="form-horizontal" id="frmEdit">
   <h2>Details/Update</h2>
   <form class="form-horizontal" action="action_test.php" method="post">
     <div class="form-group">
@@ -81,13 +88,34 @@ if(isset($_GET['id'])) {
 
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-outline-primary">Submit</button>
+        <button type="button" class="btn btn-outline-primary" id="upsertBtn">Submit</button>
       </div>
     </div>
 
     <a href="index.php"><button type="button" class="btn btn-outline-dark">Back to Courses</button></a>
   </form>
 </div>
+
+<!-- Modal for message-->
+<div class="modal fade" id="messageModal" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Message</h5>
+                  <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button> -->
+              </div>
+              <div class="modal-body">
+                  <h4 class="text-center" id="msg">Success</h4>
+              </div>
+              <div class="modal-footer">
+                  <a href="index.php"><button type="button" class="btn btn-secondary">Back</button></a>
+              </div>
+          </div>
+      </div>
+</div>
+<!-- Modal ends here -->
 
 <?php
 include_once "../Components/footer.php";
