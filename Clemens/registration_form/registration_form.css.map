@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAKA,IAAI;EACF,gBAAgB,EAHM,OAAO;;AAK/B,KAAK;EACH,KAAK,EAAE,IAAI;;AAEb,oBAAoB;EAClB,gBAAgB,EAVQ,KAAK;;AAY/B,aAAa;EACX,gBAAgB,EAdJ,OAAO",
+"sources": ["registration_form.sass"],
+"names": [],
+"file": "registration_form.css"
+}

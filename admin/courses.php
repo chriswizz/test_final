@@ -25,9 +25,8 @@ if(isset($_GET['id'])) {
   <!-- <form class="form-horizontal" action="action_test.php" method="post"> -->
 
     <!-- update ajax -->
-<form class="form-horizontal" id="frmEdit">
+<form class="form-horizontal" id="frmEdit" method="post">
   <h2>Details/Update</h2>
-  <form class="form-horizontal" action="action_test.php" method="post">
     <div class="form-group">
       <label class="control-label col-sm-2" for="course_id">Course ID:</label>
       <div class="col-sm-10">

@@ -1,0 +1,30 @@
+.signal_sentence {
+  font-size: 4vw;
+  color: white;
+  text-align: center;
+  font-weight: bold; }
+
+body {
+  background-image: url("https://cdn.pixabay.com/photo/2015/12/01/15/43/black-1072366_960_720.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  height: 120%; }
+
+#start_text {
+  margin-top: 3vh; }
+
+h5 {
+  font-size: 3vw;
+  color: #ee4540;
+  font-weight: bold; }
+
+.text_carousel {
+  font-size: 2vw;
+  color: white;
+  font-weight: bold; }
+
+/*# sourceMappingURL=landing_page.css.map */

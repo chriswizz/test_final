@@ -10,7 +10,7 @@ $description = $_POST['description'];
 $active = $_POST['active'];
 
 if (!isset($_POST['checkedTags'])) {
-  echo "Please select at least one tag for this course.";
+  // echo "Please select at least one tag for this course.";
 
 } else {
   $checkedTags = $_POST['checkedTags'];
@@ -19,7 +19,18 @@ if (!isset($_POST['checkedTags'])) {
     $courseId = $_POST['course_id'];
     $crudcontroller->updateCourse($courseId, $title, $image, $description, $active);
     $crudcontroller->deleteCourseTags($courseId);
-    echo "hallo";
+    // just for info - delete later!
+    // echo "<br>";
+    // echo "Updated Course ID: ";
+    // print_r($courseId);
+    // echo "<br>";
+    // echo "Checked Tags as array: ";
+    // print_r($checkedTags);
+    // echo "<br>";
+    // echo "<br>";
+    // echo "<strong>course update success</strong>";
+    // echo "<br>";
+    // echo "<strong>existing tags deleted</strong>";
     print_r(json_encode("Records edited successfully"));
 
 
@@ -27,10 +38,22 @@ if (!isset($_POST['checkedTags'])) {
     $crudcontroller->createCourse($title, $image, $description, $active);
     $courseIdArray = $crudcontroller->getLatestId('courses', 'course_id');
     $courseId = $courseIdArray['course_id'];
+    // just for info - delete later!
+    // echo "<br>";
+    // echo "New Course ID: ";
+    // print_r($courseId);
+    // echo "<br>";
+    // echo "Checked Tags as array: ";
+    // print_r($checkedTags);
+    // echo "<br>";
+    // echo "<br>";
+    // echo "<strong>new course created</strong>";
     print_r(json_encode("Record created successfully"));
 
   }
   $crudcontroller->createCourseTags($courseId, $checkedTags);
+  // echo "<br>";
+  // echo "<strong>new tags created</strong>";
   print_r(json_encode("Tags created successfully"));
 
 }
