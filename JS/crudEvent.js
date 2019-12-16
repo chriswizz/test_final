@@ -14,11 +14,13 @@ $(document).ready(function(){
 				$('#description').text(response.description);
 				$("#id").text(id);
 				var len = response.dates.length;
+				$('#select_date').empty();
+				$('#select_date').append('<option value="" disabled selected>Choose your section</option>');
 				for (var i = 0; i < len; i++) {
 					var id = response.dates[i]['course_item_id'];
 					var start = response.dates[i]['start_date'];
 					var end = response.dates[i]['end_date'];
-					$("#select_date").append(`<option value=${id}>${start} - ${end}</option>`);
+					$('#select_date').append(`<option value=${id}>${start} - ${end}</option>`);
 				}
 			}
 		});

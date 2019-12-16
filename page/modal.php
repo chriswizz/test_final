@@ -37,7 +37,6 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <select id="select_date" class="md-form mdb-select colorful-select dropdown-primary">
-                                <option value="" disabled selected>Choose your section</option>
                                 </select>
                             </div>
                         </div>  
