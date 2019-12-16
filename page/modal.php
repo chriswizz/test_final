@@ -26,14 +26,21 @@
                             </div>
                         </div>
                         <!-- 
-                            <div class="form-group">
-                                <div class="row">
-                                    <label>Price</label>
-                                    <input class="form-control"
-                                        id="price"
-                                        name="price"></input>
-                                </div>
-                            </div> -->
+                        <div class="form-group">
+                            <div class="row">
+                                <label>Price</label>
+                                <input class="form-control"
+                                    id="price"
+                                    name="price"></input>
+                            </div>
+                        </div> -->
+                        <div class="row">
+                            <div class="col-md-6">
+                                <select id="select_date" class="md-form mdb-select colorful-select dropdown-primary">
+                                <option value="" disabled selected>Choose your section</option>
+                                </select>
+                            </div>
+                        </div>  
 
                         <div class="form-group">
                             <div class="row">

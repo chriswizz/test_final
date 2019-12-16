@@ -8,7 +8,13 @@
         if(!empty($result)) {
             $responseArray["title"] = $result[0]["title"];
             $responseArray["description"] = $result[0]["description"];
-            echo json_encode($responseArray);
+            if(!empty($resultDates)) {
+                foreach ($resultDates as $date) {
+                    $dates[] = $date; 
+                }
+            }
+            $responseArray["dates"] = $dates;
         }
+        echo json_encode($responseArray);
     }
 ?>

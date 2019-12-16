@@ -9,11 +9,17 @@ $(document).ready(function(){
 			dataType: 'JSON',
 			data: {"id":id,"type":"single"},
 			success:function(response){
-				console.log(id);
 				$("#detail-modal").modal('show');
 				$('#title').text(response.title);
 				$('#description').text(response.description);
 				$("#id").text(id);
+				var len = response.dates.length;
+				for (var i = 0; i < len; i++) {
+					var id = response.dates[i]['course_item_id'];
+					var start = response.dates[i]['start_date'];
+					var end = response.dates[i]['end_date'];
+					$("#select_date").append(`<option value=${id}>${start} - ${end}</option>`);
+				}
 			}
 		});
 	});
