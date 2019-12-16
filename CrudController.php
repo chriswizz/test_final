@@ -169,7 +169,7 @@ class CrudController
             $dao = new Dao();
             $conn = $dao->openConnection();
 
-            // $checkedWithCategories = getTagIdCategories($checked);
+            // $checkedWithCategories = getTagIdCategories([2, 3, 4, 7, 8, 10, 11]);
             $checkedWithCategories=[[2,1], [3,2], [5,2], [7,3], [8,3], [10,3], [11,3]];
 
             $sqlBase = "SELECT DISTINCT `course_id`, `title`, `image`, `description`, `active` FROM `courses`
