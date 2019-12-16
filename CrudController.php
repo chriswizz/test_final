@@ -161,16 +161,15 @@ class CrudController
     /* Fetch all filtered Courses */
     public function showCourses(array $checked=[])
     {
-            // $checked=[2, 3, 4, 7, 8, 10, 11];
-
-
+        // $checked=[2, 3, 4, 7, 8, 10, 11];
+        $crudcontroller = new CrudController();
+        $checkedWithCategories = $crudcontroller->getTagIdCategories($checked);
+        var_dump($checkedWithCategories);
+        // $checkedWithCategories=[[2,1], [3,2], [5,2], [7,3], [8,3], [10,3], [11,3]];
 
         try {  
             $dao = new Dao();
             $conn = $dao->openConnection();
-
-            // $checkedWithCategories = getTagIdCategories([2, 3, 4, 7, 8, 10, 11]);
-            $checkedWithCategories=[[2,1], [3,2], [5,2], [7,3], [8,3], [10,3], [11,3]];
 
             $sqlBase = "SELECT DISTINCT `course_id`, `title`, `image`, `description`, `active` FROM `courses`
                 INNER JOIN courses_tags ON course_id = fk_course_id
@@ -183,8 +182,9 @@ class CrudController
               $whereStr = '';
               $checkedArray = [];
               foreach ($checkedWithCategories as $checked) {
-                if ($checked[1] == $i) {
-                  $checkedArray[] = "tag_id = $checked[0]";
+                var_dump($checked);
+                if ($checked['fk_tag_category'] == $i) {
+                  $checkedArray[] = "tag_id = ".$checked['tag_id'];
                   if ($whereStr == '') {
                     $whereStr = " WHERE tag_category_id = $i";
                   }
@@ -219,20 +219,36 @@ class CrudController
         try {  
             $dao = new Dao();
             $conn = $dao->openConnection();
-
             foreach ($tagIds as $id) {
                 $sql = "SELECT `tag_id`, `fk_tag_category` FROM `tags` WHERE tag_id = $id";
                 $resource = $conn->query($sql);
                 $result = $resource->fetch(PDO::FETCH_ASSOC);
                 $tagsWithCategories[] = $result;
             }
-
             $dao->closeConnection();
         } catch (PDOException $e) {
             echo "There is some problem in connection: " . $e->getMessage();
         }
         if (! empty($tagsWithCategories)) {
             return $tagsWithCategories;
+        }
+    }
+
+    /* get latest Price*/
+    public function readCoursePrice($courseId)
+    {
+        try {  
+            $dao = new Dao();
+            $conn = $dao->openConnection();
+            $sql = "SELECT price FROM `course_items` WHERE fk_course_id = $courseId LIMIT 1";
+            $resource = $conn->query($sql);
+            $result = $resource->fetchAll(PDO::FETCH_ASSOC);
+            $dao->closeConnection();
+        } catch (PDOException $e) {
+            echo "There is some problem in connection: " . $e->getMessage();
+        }
+        if (! empty($result)) {
+            return $result;
         }
     }
 
