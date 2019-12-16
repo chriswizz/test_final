@@ -88,6 +88,24 @@ class CrudController
         }
     }
 
+    /* Fetch all Tags of Category*/
+    public function readCategoryTags($categoryId)
+    {
+        try {  
+            $dao = new Dao();
+            $conn = $dao->openConnection();
+            $sql = "SELECT * FROM `tags` WHERE fk_category_id = $categoryId";
+            $resource = $conn->query($sql);
+            $result = $resource->fetchAll(PDO::FETCH_ASSOC);
+            $dao->closeConnection();
+        } catch (PDOException $e) {
+            echo "There is some problem in connection: " . $e->getMessage();
+        }
+        if (! empty($result)) {
+            return $result;
+        }
+    }
+
     /* Fetch single Course */
     public function readCourse($courseId)
     {

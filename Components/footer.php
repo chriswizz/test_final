@@ -1,20 +1,13 @@
-<footer class="page-footer mt-4 py-4 px-0 sticky-bottom">
-    <div class="row m-0">
-        <div class="col-12 text-center col-md-4 text-md-right p-0">
-            <p class="mt-2"> @Copyright 2019 | BlueBearCoders </p>
-        </div>
-        <div class="col-12 col-md-4 mt-2 text-center p-0">
-            <div class="socialmedia-icon">
-                <a href="#"><i class="fab fa-twitter"></i></a>
-            </div>
-            <div class="socialmedia-icon">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-            </div>
-            <div class="socialmedia-icon">
-                <a href="#"><i class="fab fa-google-plus-g"></i></a>
-            </div>
-        </div>
-    </div>
+<footer>
+    <ul class="list-inline icon text-center bg-danger p-2 ">
+        <li class="list-inline-item"><a href="#" class="text-white" class="text-white">AGB</a></li>
+        <li class="list-inline-item"><a href="#" class="text-white">Datenschutz</a></li>
+        <li class="list-inline-item"><a href="#" class="text-white">Impressum</a></li>
+        <li class="list-inline-item"><a href="#" class="text-white"><i class="fab fa-facebook"></i></a></li>
+        <li class="list-inline-item"><a href="#" class="text-white"><i class="fab fa-instagram"></i></a></li>
+        <li class="list-inline-item"><a href="#" class="text-white"><i class="fab fa-youtube"></i></a></li>
+        <li class="list-inline-item"><a href="#" class="text-white"><i class="fab fa-linkedin"></i></a></i></li>
+    </ul>
 </footer>
 <!-- JQuery<--->
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -28,6 +21,7 @@ integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07j
 crossorigin="anonymous"></script>
 <!---JS--->
 <script type="text/javascript" src="../JS/crudEvent.js"></script>
+<script type="text/javascript" src="cart.js"></script>
 </body>
 
 </html>

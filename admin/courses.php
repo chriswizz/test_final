@@ -10,7 +10,7 @@ if(isset($_GET['id'])) {
   $resultCourse = $crudcontroller->readCourse($id);
   $resultCourseTags = $crudcontroller->readCourseTags($id);
   foreach ($resultCourseTags as $courseTag) {
-    $courseTagIds[] = $courseTag['fk_tag_id'];
+    $courseTagIds[] = $courseTag['tag_id'];
   }
 } else {
   $id = '';

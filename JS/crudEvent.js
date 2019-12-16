@@ -1,6 +1,6 @@
-$(document).ready(function(){
+$(document).ready(function() {
 
-	$(document).on('click' , '.showBtn' ,function(){
+	$(document).on('click', '.showBtn', function() {
 		var id = this.id;
 		console.log(id);
 		$.ajax({
@@ -26,7 +26,7 @@ $(document).ready(function(){
 		});
 	});
 
-	$(document).on('click' , '#upsertBtn' ,function(){
+	$(document).on('click', '#upsertBtn', function(){
 		$.ajax({
 				url: 'upsert.php',
 				type: 'POST',
@@ -40,14 +40,13 @@ $(document).ready(function(){
 				// error: (jqXHR, errorMessage, error) => {
 				// 	$("#sucMsg").html("error");
 				// }
-				
 			});
 		$("#messageModal").modal('show');
 	});
 
 
 	//search by course title in admin
-	$('.search-box input[type="text"]').on("keyup input", function(){
+	$('.search-box input[type="text"]').on("keyup input", function() {
         var inputVal = $(this).val();
         if(inputVal.length){
             $.get("search_course_title.php", {term: inputVal}).done(function(data){
