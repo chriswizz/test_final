@@ -3,7 +3,7 @@ $title = "CourseOverview";
 include_once "../Components/head.php";
 include_once "../CrudController.php";
 $crudcontroller = new CrudController();
-$result = $crudcontroller->readData();
+$result = $crudcontroller->readCourses();
 ?>
 
     <div class="row">

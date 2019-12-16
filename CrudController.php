@@ -47,7 +47,7 @@ class CrudController
             $conn = $dao->openConnection();
             $sql = "SELECT * FROM `courses` WHERE course_id = $courseId";
             $resource = $conn->query($sql);
-            $result = $resource->fetch(PDO::FETCH_ASSOC);
+            $result = $resource->fetchAll(PDO::FETCH_ASSOC);
             $dao->closeConnection();
         } catch (PDOException $e) {
             echo "There is some problem in connection: " . $e->getMessage();
@@ -155,18 +155,16 @@ class CrudController
     }
 
     // BABSI
-    
-    /* Fetch All */
-    public function readData()
+
+    //fetch by course Title -> search in Admin-Panel - not finished
+
+    public function readCoursesbyTitle($search)
     {
         try {            
             $dao = new Dao();            
-            $conn = $dao->openConnection();            
-            $sql = "SELECT `course_id`,`title`,`description` FROM `courses` ORDER BY course_id DESC";
-            // $sql = "SELECT `course_id`,`title`,`description`, `price`, `start_date`, `end_date`
-            // FROM `courses` 
-            // INNER JOIN `course_items`
-            // ON courses.course_id = course_items.fk_course_id";        
+            $conn = $dao->openConnection();
+            $search = $_REQUEST["term"];            
+            $sql = "SELECT * FROM `courses` WHERE title LIKE $search%.";       
             $resource = $conn->query($sql);            
             $result = $resource->fetchAll(PDO::FETCH_ASSOC);            
             $dao->closeConnection();
@@ -177,91 +175,6 @@ class CrudController
         if (! empty($result)) {
             return $result;
         }
-    }
-
-        //get Course Detail for Modal by ID
-
-    public function readSingle($id)
-    {
-        try {
-            
-            $dao = new Dao();            
-            $conn = $dao->openConnection();            
-            // $sql = "SELECT `course_id`,`title`,`description`, `price`, `start_date`, `end_date`
-            // FROM `courses` 
-            // INNER JOIN `course_items`
-            // ON courses.course_id = course_items.fk_course_id 
-            // WHERE course_id=" . $id;  
-            $sql = "SELECT `course_id`,`title`,`description`
-            FROM `courses` 
-            WHERE course_id=" . $id;    
-            $resource = $conn->query($sql);            
-            $result = $resource->fetchAll(PDO::FETCH_ASSOC);            
-            $dao->closeConnection();
-        } catch (PDOException $e) {
-            
-            echo "There is some problem in connection: " . $e->getMessage();
-        }
-        if (! empty($result)) {
-            return $result;
-        }
-    }
-
-
-
-
-
-
-
-
-
-    /* Add New Record */
-    public function add($formArray)
-    {
-        $title = $_POST['title'];
-        $description = $_POST['description'];
-        $url = $_POST['url'];
-        $category = $_POST['category'];
-        
-        $dao = new Dao();
-        
-        $conn = $dao->openConnection();
-        
-        $sql = "INSERT INTO `tb_links`(`title`, `description`, `url`, `category`) VALUES ('" . $title . "','" . $description . "','" . $url . "','" . $category . "')";
-        $conn->query($sql);
-        $dao->closeConnection();
-    }
-
-    /* Edit a Record */
-    public function edit($formArray)
-    {
-        $id = $_POST['id'];
-        $title = $_POST['title'];
-        $description = $_POST['description'];
-        $url = $_POST['url'];
-        $category = $_POST['category'];
-        
-        $dao = new Dao();
-        
-        $conn = $dao->openConnection();
-        
-        $sql = "UPDATE tb_links SET title = '" . $title . "' , description='" . $description . "', url='" . $url . "', category='" . $category . "' WHERE id=" . $id;
-        
-        $conn->query($sql);
-        $dao->closeConnection();
-    }
-
-    /* Delete a Record */
-    public function delete($id)
-    {
-        $dao = new Dao();
-        
-        $conn = $dao->openConnection();
-        
-        $sql = "DELETE FROM `tb_links` where id='$id'";
-        
-        $conn->query($sql);
-        $dao->closeConnection();
     }
 }
 
