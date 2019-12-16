@@ -3,6 +3,55 @@ include_once 'Dao.php';
 
 class CrudController
 {
+
+    /* Fetch all Courses - optional filter on tags*/
+    public function showCourses(array $checked=[])
+    {
+        $crudcontroller = new CrudController();
+        $checkedWithCategories = $crudcontroller->getTagIdCategories($checked);
+        try {  
+            $dao = new Dao();
+            $conn = $dao->openConnection();
+            $sqlBase = "SELECT DISTINCT `course_id`, `title`, `image`, `description`, `active` FROM `courses`
+                INNER JOIN courses_tags ON course_id = fk_course_id
+                INNER JOIN tags ON fk_tag_id = tag_id
+                INNER JOIN tag_categories ON fk_tag_category = tag_category_id";
+            $sql = $sqlBase;
+            if ($checkedWithCategories != false) {
+                for ($i=1; $i<4; $i++) {
+                    $whereStr = '';
+                    $checkedArray = [];
+                    foreach ($checkedWithCategories as $checked) {
+                    var_dump($checked);
+                    if ($checked['fk_tag_category'] == $i) {
+                      $checkedArray[] = "tag_id = ".$checked['tag_id'];
+                      if ($whereStr == '') {
+                        $whereStr = " WHERE tag_category_id = $i";
+                      }
+                    }
+                    }
+                    if ($whereStr != '') {
+                    $sql .= " intersect ";
+                    $sql .= $sqlBase;
+                    $sql .= $whereStr;
+                    $sql .= " AND (" . implode(" OR ", $checkedArray) . ")";
+                    }
+                }
+            }
+            echo "<br>";
+            echo $sql;
+            echo "<br>";
+            $resource = $conn->query($sql);
+            $result = $resource->fetchAll(PDO::FETCH_ASSOC);
+            $dao->closeConnection();
+        } catch (PDOException $e) {
+            echo "There is some problem in connection: " . $e->getMessage();
+        }
+        if (! empty($result)) {
+            return $result;
+        }        
+    }
+
     /* Fetch all Courses */
     public function readCourses()
     {
@@ -152,65 +201,6 @@ class CrudController
         if (! empty($result)) {
             return $result;
         }
-    }
-
-
-
-
-
-    /* Fetch all filtered Courses */
-    public function showCourses(array $checked=[])
-    {
-        // $checked=[2, 3, 4, 7, 8, 10, 11];
-        $crudcontroller = new CrudController();
-        $checkedWithCategories = $crudcontroller->getTagIdCategories($checked);
-        var_dump($checkedWithCategories);
-        // $checkedWithCategories=[[2,1], [3,2], [5,2], [7,3], [8,3], [10,3], [11,3]];
-
-        try {  
-            $dao = new Dao();
-            $conn = $dao->openConnection();
-
-            $sqlBase = "SELECT DISTINCT `course_id`, `title`, `image`, `description`, `active` FROM `courses`
-                INNER JOIN courses_tags ON course_id = fk_course_id
-                INNER JOIN tags ON fk_tag_id = tag_id
-                INNER JOIN tag_categories ON fk_tag_category = tag_category_id";
-
-            $sql = $sqlBase;
-
-            for ($i=1; $i<4; $i++) {
-              $whereStr = '';
-              $checkedArray = [];
-              foreach ($checkedWithCategories as $checked) {
-                var_dump($checked);
-                if ($checked['fk_tag_category'] == $i) {
-                  $checkedArray[] = "tag_id = ".$checked['tag_id'];
-                  if ($whereStr == '') {
-                    $whereStr = " WHERE tag_category_id = $i";
-                  }
-                }
-              }
-              
-              if ($whereStr != '') {
-                $sql .= " intersect ";
-                $sql .= $sqlBase;
-                $sql .= $whereStr;
-                $sql .= " AND (" . implode(" OR ", $checkedArray) . ")";
-              }
-            }
-            echo $sql;
-            echo "<br>";
-            echo "<br>";
-
-            $resource = $conn->query($sql);
-            $result = $resource->fetchAll(PDO::FETCH_ASSOC);
-            $dao->closeConnection();
-        } catch (PDOException $e) {
-            echo "There is some problem in connection: " . $e->getMessage();
-        }
-        if (! empty($result)) {
-            return $result;
-        }        
     }
 
     /* get category of every tagID*/
