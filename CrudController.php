@@ -112,7 +112,9 @@ class CrudController
         try {  
             $dao = new Dao();
             $conn = $dao->openConnection();
-            $sql = "SELECT * FROM `courses_tags` WHERE fk_course_id = $courseId";
+            $sql = "SELECT `course_tag_id`, `fk_course_id`, `tag_id`, `tag` FROM `courses_tags`
+                    INNER JOIN `tags` ON fk_tag_id = tag_id
+                    WHERE fk_course_id = $courseId";
             $resource = $conn->query($sql);
             $result = $resource->fetchAll(PDO::FETCH_ASSOC);
             $dao->closeConnection();
@@ -231,6 +233,24 @@ class CrudController
             $dao = new Dao();
             $conn = $dao->openConnection();
             $sql = "SELECT price FROM `course_items` WHERE fk_course_id = $courseId LIMIT 1";
+            $resource = $conn->query($sql);
+            $result = $resource->fetchAll(PDO::FETCH_ASSOC);
+            $dao->closeConnection();
+        } catch (PDOException $e) {
+            echo "There is some problem in connection: " . $e->getMessage();
+        }
+        if (! empty($result)) {
+            return $result;
+        }
+    }
+
+    /* get all Course Dates*/
+    public function readCourseDates($courseId)
+    {
+        try {  
+            $dao = new Dao();
+            $conn = $dao->openConnection();
+            $sql = "SELECT * FROM `course_items` WHERE fk_course_id = $courseId";
             $resource = $conn->query($sql);
             $result = $resource->fetchAll(PDO::FETCH_ASSOC);
             $dao->closeConnection();
