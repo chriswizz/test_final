@@ -15,9 +15,9 @@ $result = $crudcontroller->readCourses();
     </div>
 
     <div class="row p-4 m-0" id="container">
-        <?php require_once "course_card.php" ?>
+        <?php require_once "../Components/course_card.php" ?>
     </div>
 
-<?php require_once "modal.php" ?>
+<?php require_once "../Components/modal.php" ?>
 
 <?php include_once "../Components/footer.php"?>

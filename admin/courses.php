@@ -1,6 +1,7 @@
 <?php
 $title = "Adminpanel";
 include_once "../Components/head.php";
+include_once "../Components/navbar.php";
 include_once "../CrudController.php";
 $crudcontroller = new CrudController();
 $resultTags = $crudcontroller->readTags();
@@ -67,20 +68,20 @@ if(isset($_GET['id'])) {
       <label class="control-label col-sm-2" for="active">Tags:</label>
 
       <?php foreach ($resultTags as $tag) { ?>
-      <div class="col-sm-offset-2 col-sm-10">
-        <div class="checkbox">
-          <label>
-            <input
-              type="checkbox"
-              value="<?php echo $tag["tag_id"] ?>"
-              name="checkedTags[]"
-              <?php if (in_array($tag["tag_id"], $courseTagIds)) { ?>
-              checked="checked"
-              <?php } ?>
-            >
-            <?php echo $tag["tag"] ?>
-          </label>
-        </div>
+      <div class="col-sm-10 offset-2">
+          <div class="checkbox">
+            <label>
+              <input
+                type="checkbox"
+                value="<?php echo $tag["tag_id"] ?>"
+                name="checkedTags[]"
+                <?php if (in_array($tag["tag_id"], $courseTagIds)) { ?>
+                checked="checked"
+                <?php } ?>
+              >
+              <?php echo $tag["tag"] ?>
+            </label>
+          </div>
       </div>
       <?php } ?>
 
