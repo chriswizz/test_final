@@ -25,44 +25,45 @@ if(isset($_GET['id'])) {
   <!-- <form class="form-horizontal" action="action_test.php" method="post"> -->
 
     <!-- update ajax -->
+
 <form class="form-horizontal" id="frmEdit" method="post">
   <h2>Details/Update</h2>
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="course_id">Course ID:</label>
+    <div class="form-group row">
+      <label class="control-label col-sm-2 col-form-label" for="course_id">Course ID:</label>
       <div class="col-sm-10">
-        <input type="number" class="form-control" name="course_id" id="course_id" value="<?php if ($id<>"") echo $resultCourse[0]['course_id']; ?>">
+        <input readonly type="number" class="form-control" name="course_id" id="course_id" value="<?php if ($id<>"") echo $resultCourse[0]['course_id']; ?>">
       </div>
     </div>
 
-    <div class="form-group">
+    <div class="form-group row">
       <label class="control-label col-sm-2" for="title">Title:</label>
       <div class="col-sm-10">
         <input type="text" class="form-control" name="title" id="title" value="<?php if ($id<>"") echo $resultCourse[0]['title']; ?>">
       </div>
     </div>
 
-    <div class="form-group">
+    <div class="form-group row">
       <label class="control-label col-sm-2" for="image">Image:</label>
       <div class="col-sm-10">
         <input type="text" class="form-control" name="image" id="image" value="<?php if ($id<>"") echo $resultCourse[0]['image']; ?>">
       </div>
     </div>
 
-    <div class="form-group">
+    <div class="form-group row">
       <label class="control-label col-sm-2" for="description">Description:</label>
       <div class="col-sm-10">
         <input type="text" class="form-control" name="description" id="description" value="<?php if ($id<>"") echo $resultCourse[0]['description']; ?>">
       </div>
     </div>
 
-    <div class="form-group">
+    <div class="form-group row">
       <label class="control-label col-sm-2" for="active">Show Course:</label>
       <div class="col-sm-10">
         <input type="text" class="form-control" name="active" id="active" value="<?php if ($id<>"") echo $resultCourse[0]['active']; ?>">
       </div>
     </div>
 
-    <div class="form-group">
+    <div class="form-group row">
       <label class="control-label col-sm-2" for="active">Tags:</label>
 
       <?php foreach ($resultTags as $tag) { ?>
@@ -85,7 +86,7 @@ if(isset($_GET['id'])) {
 
     </div>
 
-    <div class="form-group">        
+    <div class="form-group row">        
       <div class="col-sm-offset-2 col-sm-10">
         <button type="button" class="btn btn-outline-primary" id="upsertBtn">Submit</button>
       </div>
