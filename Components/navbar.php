@@ -37,5 +37,48 @@
                 <!-- end of single info -->
             </div>
         </div> <!-- nav div -->
+<!-- login icon -->
+        <!-- <ul class="navbar-nav mr-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-user userIcon"></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <div class="mr-4">
+                <?php
+                if ( isset($_SESSION['user' ])!="" ) {
+
+                    ?>
+                    <a class='dropdown-item' href='#'>You are signed in as
+                    
+                    <?=$userRow['userName']?>
+
+                    </a>
+                    <div class='dropdown-divider'></div>
+                    <a class='dropdown-item' href='../login/logout.php?logout'>Sign Out</a>
+
+                    <?php
+
+                } elseif ( isset($_SESSION['admin' ])!="" ){
+                    ?>
+                    <a class='dropdown-item' href='#'>You are signed in as 
+                        <span class="text-info font-weight-bold">                    
+                        <?=$userRow['role']?>
+                        </span>
+                    </a>
+                    <div class='dropdown-divider'></div>
+                    <a class='dropdown-item' href='../login/logout.php?logout'>Sign Out</a>
+
+                    <?php
+                    } else {
+                    echo "<a class='dropdown-item' href='../login/login.php'>Sign In</a>";
+                    }
+                    ?>
+                    </div>
+                </div>
+            </li>
+        </ul>   -->
+
+
     </nav> <!-- nav end -->
 </div>

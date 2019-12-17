@@ -21,7 +21,8 @@ integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07j
 crossorigin="anonymous"></script>
 <!---JS--->
 <script type="text/javascript" src="../JS/crudEvent.js"></script>
-<script type="text/javascript" src="cart.js"></script>
+<script type="text/javascript" src="../JS/filterDropdown.js"></script>
+<!-- <script type="text/javascript" src="../JS/cart.js"></script> -->
 </body>
 
 </html>
