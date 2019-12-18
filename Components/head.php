@@ -10,7 +10,13 @@
     integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="../CSS/styles.css">
   <link rel="stylesheet" type="text/css" href="../CSS/mainstyle.css">
+  <link rel="stylesheet" type="text/css" href="../CSS/codefactory.css">
+  <link rel="stylesheet" type="text/css" href="../CSS/landing_page.css">
+  	<!-- Own CSS -->
+	<link rel='stylesheet' type='text/css' href='../CSS/news_feed.css'>
+	<!-- Magnific CSS -->
+	<link rel='stylesheet' type='text/css' href='../CSS/magnific-popup.css'>
   <title><?= $title ?></title>
 </head>
 
-<body class="m-0 p-0">
+<body class="m-0 p-0 mt-5 pt-5">

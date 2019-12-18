@@ -20,10 +20,6 @@ if(isset($_GET['id'])) {
 ?>
 
 <div class="container">
-  <!-- <div id="sucMsg">Msg</div> -->
-  
-  <!-- update only php -->
-  <!-- <form class="form-horizontal" action="action_test.php" method="post"> -->
 
     <!-- update ajax -->
 
@@ -103,15 +99,15 @@ if(isset($_GET['id'])) {
           <div class="modal-content">
               <div class="modal-header">
                   <h5 class="modal-title" id="exampleModalLabel">Message</h5>
-                  <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
-                  </button> -->
+                  </button>
               </div>
               <div class="modal-body">
                   <h4 class="text-center" id="msg">Success</h4>
               </div>
               <div class="modal-footer">
-                  <a href="index.php"><button type="button" class="btn btn-secondary">Back</button></a>
+                  <a href="index.php"><button type="button" class="btn btn-secondary">Back to Courses</button></a>
               </div>
           </div>
       </div>

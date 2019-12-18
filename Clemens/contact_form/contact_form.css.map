@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAGA,IAAI;EACF,WAAW,EAAE,IAAI;;AAEnB,gBAAgB;EACd,gBAAgB,EANJ,OAAO;EAOnB,KAAK,EAAE,IAAI",
-"sources": ["contact_form.sass"],
-"names": [],
-"file": "contact_form.css"
-}

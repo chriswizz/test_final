@@ -38,7 +38,7 @@ class CrudController
                     }
                 }
             }
-
+            $sql .= " ORDER BY `title`";
             $resource = $conn->query($sql);
             $result = $resource->fetchAll(PDO::FETCH_ASSOC);
             $dao->closeConnection();

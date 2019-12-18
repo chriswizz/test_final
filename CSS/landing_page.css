@@ -1,0 +1,23 @@
+.signal_sentence {
+  font-size: 4vw;
+  color: black;
+  text-align: center;
+  font-weight: bold;
+}
+
+#start_text {
+  margin-top: 3vh;
+}
+
+h5 {
+  font-size: 3vw;
+  color: #ee4540;
+  font-weight: bold;
+}
+
+.text_carousel {
+  font-size: 2vw;
+  color: white;
+  font-weight: bold;
+}
+/*# sourceMappingURL=landing_page.css.map */
