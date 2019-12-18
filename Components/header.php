@@ -1,6 +1,3 @@
-<?php
-$addCSS = "../CSS/header.css";
-?>
 <div class="header">
    <div class="header__bg"></div>
    <div class="header__logo">
