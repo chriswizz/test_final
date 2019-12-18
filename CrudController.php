@@ -196,7 +196,9 @@ class CrudController
             $conn = $dao->openConnection();
             $sql = "INSERT INTO `courses` (title, image, description, active)
                     VALUES ('$title','$image','$description',$active)";
-            $conn->query($sql);
+            $resource = $conn->prepare($sql); 
+            $resource->execute();
+            // $conn->query($sql);
             $dao->closeConnection();
         } catch (PDOException $e) {
             echo "There is some problem in connection: " . $e->getMessage();

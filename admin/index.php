@@ -1,11 +1,19 @@
 <?php
+session_start();
+if (!isset($_SESSION['admin'])) {
+    header("Location: login.php");
+    exit;
+}
+
 $title = "Course Dashboard";
 include_once "../Components/head.php";
 include_once "../CrudController.php";
-include_once "../Components/header.php";
 $crudcontroller = new CrudController();
 $result = $crudcontroller->showCourses();
+
 ?>
+
+<a href="logout.php?logout"><button type="button" class="btn btn-success border">Log Out</button></a>
 
 <div class="container-fluid">
 
@@ -20,7 +28,7 @@ $result = $crudcontroller->showCourses();
         <button class="btn btn-info my-2 my-sm-0" type="submit"><i class="fas fa-search searchButton"></i></button>
       </div>
       <div class="form-inline my-2 my-lg-0">
-        <a href="../page/index.php"><i class="fas fa-binoculars text-info"></i></a>
+        <a href="../page/our-courses.php" target="_blank"><i class="fas fa-binoculars text-info"></i></a>
       </div>
           <div class="form-inline my-2 my-lg-0">
               <a href='courses.php' class='d-flex text-light'>

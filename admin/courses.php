@@ -1,4 +1,10 @@
 <?php
+session_start();
+if (!isset($_SESSION['admin'])) {
+    header("Location: login.php");
+    exit;
+}
+
 $title = "Adminpanel";
 include_once "../Components/head.php";
 include_once "../Components/navbar.php";
