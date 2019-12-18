@@ -5,7 +5,7 @@
                 <p class="signal_sentence">CODEFACTORY</p>
                 <p class="signal_sentence">WE CHANGE YOUR LIFE NOW!</p>
             </div> -->
-            <div class="col-md-12 ">
+            <div class="col-md-12 carousel_2">
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
                         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -14,7 +14,7 @@
                     </ol>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img class="d-block w-100 mt-5" src="https://cdn.pixabay.com/photo/2014/12/16/22/25/youth-570881_960_720.jpg" alt="First slide">
+                            <img class="d-block w-100" src="https://cdn.pixabay.com/photo/2014/12/16/22/25/youth-570881_960_720.jpg" alt="First slide">
                             <div class="carousel-caption d-md-block">
                                 <h5>INCREASE YOUR SALARY NOW!</h5>
                                 <p class="text_carousel">Our graduates from Full-Stack-Course start with an average salary of 40k per year.</p>

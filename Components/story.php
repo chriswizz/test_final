@@ -4,16 +4,16 @@
         our Graduates work at
 
     </div>
-    <div class="h5 mx-auto" style="width: 400px;">
-        <!--  IBM, XXLutz, ABC, CDE, FGH, LLL, HHH -->
-        <ul class="list-inline icon text-center p-2 ">
+    <div class="h5 mx-auto w-100">
+            <!--  IBM, XXLutz, ABC, CDE, FGH, LLL, HHH -->
+        <ul class="list-inline icon text-center p-2 mx-auto  d-flex justify-content-around ">
             <li class="list-inline-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/IBM_logo.svg/800px-IBM_logo.svg.png" height="30px" width="40px" alt=""></li>
-            <li class="list-inline-item"><img src="https://www.seekclipart.com/clipng/middle/7-78614_free-google-clip-art-transparent-stock-images-techflourish.png" height="30px" width="40px" alt=""></li>
-            <li class="list-inline-item"><img src="https://s3-eu-west-1.amazonaws.com/tpd/logos/587a6b5a0000ff00059ac8cd/0x0.png" height="30px" width="50px" alt=""></li>
+            <li class="list-inline-item border-black"><img src="../img/google.png" height="40px" width="55px" alt=""></li>
+            <li class="list-inline-item"><img src="https://s3-eu-west-1.amazonaws.com/tpd/logos/587a6b5a0000ff00059ac8cd/0x0.png" height="30px" width="55px" alt=""></li>
             <li class="list-inline-item"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f6/GT_Interactive_Logo.jpg" height="30px" width="40px" alt=""></li>
-            <li class="list-inline-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Siemens-logo.svg/744px-Siemens-logo.svg.png" height="30px" width="40px" alt=""></li>
-            <li class="list-inline-item"><img src="https://image.futurezone.at/images/cfs_landscape_616w_347h/1198668/MSLOGO.jpg" height="30px" width="40px" alt=""></li>
-            <li class="list-inline-item"><img src="https://mms.businesswire.com/media/20191011005024/en/749077/4/Sportradar_logo_RGB_black_%28002%29_webready.jpg?download=1" height="30px" width="50px" alt=""></i></li>
+            <li class="list-inline-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Siemens-logo.svg/744px-Siemens-logo.svg.png" height="30px" width="60px" alt=""></li>
+            <li class="list-inline-item"><img src="../img/mf.png" height="30px" width="80px" alt=""></li>
+            <li class="list-inline-item"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7f/Sportradar_logo.png" height="30px" width="80px" alt=""></i></li>
         </ul>
     </div>
 

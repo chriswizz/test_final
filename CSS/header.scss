@@ -8,7 +8,7 @@
 }
 
 body {
-   background-color: #e4e9ed;
+   // background-color: #e4e9ed;
    font-family: Raleway, sans-serif;
 }
 
@@ -18,7 +18,7 @@ br {
 
 .header {
    width: 100%;
-   height: 80vh;
+   height: 70vh;
    position: relative;
    display: grid;
    grid-template-rows: max-content 1fr;
@@ -79,7 +79,7 @@ br {
 
 .about {
    width: 100%;
-   height: 60vh;
+   height: 30vh;
    margin-top: -7rem;
    clip-path: polygon(0 27%, 100% 0, 100% 100%, 0 100%);
    background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="4" height="4" viewBox="0 0 4 4"%3E%3Cpath fill="%239C92AC" fill-opacity="0.4" d="M1 3h1v1H1V3zm2-2h1v1H3V1z"%3E%3C/path%3E%3C/svg%3E');
@@ -126,7 +126,7 @@ br {
 
 .header {
    width: 100%;
-   height: 80vh;
+   height: 70vh;
    position: relative;
    display: grid;
    grid-template-rows: max-content 1fr;
@@ -187,7 +187,7 @@ br {
 
 .about {
    width: 100%;
-   height: 60vh;
+   height: 30vh;
    margin-top: -7rem;
    clip-path: polygon(0 27%, 100% 0, 100% 100%, 0 100%);
    background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="4" height="4" viewBox="0 0 4 4"%3E%3Cpath fill="%239C92AC" fill-opacity="0.4" d="M1 3h1v1H1V3zm2-2h1v1H3V1z"%3E%3C/path%3E%3C/svg%3E');

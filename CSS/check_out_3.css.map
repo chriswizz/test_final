@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AASA,AAAA,GAAG,CAAC;EACF,KAAK,EAAE,IAAI;CAAG;;AAEhB,AAAA,UAAU,CAAC;EACT,UAAU,EAAE,GAAG;CAAG;;AAEpB,AAAA,eAAe,CAAC;EACd,MAAM,EAAE,IAAI;EACZ,gBAAgB,EAAE,IAAI;CAAG",
+    "sources": [
+        "check_out_3.sass"
+    ],
+    "names": [],
+    "file": "check_out_3.css"
+}
