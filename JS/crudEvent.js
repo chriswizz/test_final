@@ -20,7 +20,8 @@ $(document).ready(function() {
 					var id = response.dates[i]['course_item_id'];
 					var start = response.dates[i]['start_date'];
 					var end = response.dates[i]['end_date'];
-					$('#select_date').append(`<option value=${id}>${start} - ${end}</option>`);
+					var price = response.dates[i]['price'];
+					$('#select_date').append(`<option value=${id}>${start} - ${end} - €${price/100}</option>`);
 				}
 			}
 		});

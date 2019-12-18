@@ -12,8 +12,6 @@
                         <img src="https://codefactory.wien/wp-content/themes/hestia/cf-images/big-jpg/2-fullstack.jpg" style="width:100%" alt="">
                     </div>
                     <div class="col-6">
-
-
                         <div class="form-group">
                             <div class="row">
                                 <p id="title"></p>
@@ -25,28 +23,13 @@
                                 <p id="description"></p>
                             </div>
                         </div>
-                        <!-- 
-                        <div class="form-group">
-                            <div class="row">
-                                <label>Price</label>
-                                <input class="form-control"
-                                    id="price"
-                                    name="price"></input>
-                            </div>
-                        </div> -->
-                        <div class="row">
-                            <div class="col-md-6">
-                                <select id="select_date" class="md-form mdb-select colorful-select dropdown-primary">
-                                </select>
-                            </div>
-                        </div>  
+                    </div>
 
-                        <div class="form-group">
-                            <div class="row">
-                                <p id="id"></p>
-                            </div>
+                    <div class="row justify-content-center">
+                        <div class="col-md-10 m-auto">
+                            <select id="select_date" class="md-form mdb-select colorful-select dropdown-primary">
+                            </select>
                         </div>
-
                     </div>
                 </div>
 

@@ -41,6 +41,9 @@
             // $count = $resource->fetchColumn();
             $result = $resource->fetchAll();
             $conn = $dao->closeConnection();
+            echo $result[0]['user_password'];
+            echo "<br>";
+            echo $passHash;
             if ($count == 1 && $result[0]['user_password'] == $passHash) {
                 if($result[0]['user_role'] == 'admin') {
                     $_SESSION['admin'] = $result[0]['user_id'];
