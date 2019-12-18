@@ -16,7 +16,22 @@ $( '.dropdown-menu a' ).on( 'click', function( event ) {
    }
 
    $( event.target ).blur();
-      
-   console.log( options );
+
+    $.ajax({
+        url: 'filter.php',
+        type: 'POST',
+        data: {"options":options},
+        success:function(response){
+            $("#container").html(response);
+        },
+        error: (jqXHR, errorMessage, error) => {
+            console.log(errorMessage);
+            console.log(error);
+        }
+
+    });
+
    return false;
+   
+
 });

@@ -20,7 +20,7 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/event/create"><i class="fas fa-user-friends mr-1"></i>About</a>
+                    <a class="nav-link" href="about.php"><i class="fas fa-user-friends mr-1"></i>About</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/event/create"><i class="far fa-envelope-open mr-1"></i>Contact</a>

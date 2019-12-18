@@ -22,7 +22,7 @@ class CrudController
                     $whereStr = '';
                     $checkedArray = [];
                     foreach ($checkedWithCategories as $checked) {
-                    var_dump($checked);
+                    // var_dump($checked);
                     if ($checked['fk_tag_category'] == $i) {
                       $checkedArray[] = "tag_id = ".$checked['tag_id'];
                       if ($whereStr == '') {
@@ -38,9 +38,7 @@ class CrudController
                     }
                 }
             }
-            echo "<br>";
-            echo $sql;
-            echo "<br>";
+
             $resource = $conn->query($sql);
             $result = $resource->fetchAll(PDO::FETCH_ASSOC);
             $dao->closeConnection();

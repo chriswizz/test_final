@@ -33,7 +33,6 @@ $(document).ready(function() {
 				dataType: 'JSON',
 				data: $("#frmEdit").serialize(),
 				success:function(response){
-					$("#messageModal").modal('show');
 					$("#msg").html(response);
 					loadData();
 				},
@@ -43,7 +42,6 @@ $(document).ready(function() {
 			});
 		$("#messageModal").modal('show');
 	});
-
 
 	//search by course title in admin
 	$('.search-box input[type="text"]').on("keyup input", function() {
@@ -58,14 +56,14 @@ $(document).ready(function() {
     });
 });
 
-function loadData() {
-	$.ajax({
-		url: 'read.php',
-		type: 'POST',
-		data: {"type":"all"},
-		success:function(response){
-			$("#container").html(response);
-		}
-	});
-}
+// function loadData() {
+// 	$.ajax({
+// 		url: 'read.php',
+// 		type: 'POST',
+// 		data: {"type":"all"},
+// 		success:function(response){
+// 			$("#container").html(response);
+// 		}
+// });
+// }
 		

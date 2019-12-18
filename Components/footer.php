@@ -1,5 +1,5 @@
-<footer>
-    <ul class="list-inline icon text-center bg-danger p-2 ">
+<footer class="">
+    <ul class="list-inline icon text-center bg-danger p-2 m-0">
         <li class="list-inline-item"><a href="#" class="text-white" class="text-white">AGB</a></li>
         <li class="list-inline-item"><a href="#" class="text-white">Datenschutz</a></li>
         <li class="list-inline-item"><a href="#" class="text-white">Impressum</a></li>
@@ -10,7 +10,9 @@
     </ul>
 </footer>
 <!-- JQuery<--->
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 <!--popper.js--->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
 integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
