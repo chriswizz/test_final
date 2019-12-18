@@ -56,7 +56,11 @@ if(isset($_GET['id'])) {
     <div class="form-group row">
       <label class="control-label col-sm-2" for="active">Show Course:</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" name="active" id="active" value="<?php if ($id<>"") echo $resultCourse[0]['active']; ?>">
+        <!-- <input type="text" class="form-control" name="active" id="active" value="<?php if ($id<>"") echo $resultCourse[0]['active']; ?>"> -->
+        <select name="active" class="form-control" id="active">
+          <option value="1" <?php if ($id<>"" && $resultCourse[0]['active']==1) echo "selected"; ?>>1</option>
+          <option value="0" <?php if ($id<>"" && $resultCourse[0]['active']==0) echo "selected"; ?>>0</option>
+        </select>
       </div>
     </div>
 
