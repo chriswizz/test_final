@@ -30,15 +30,17 @@ $(document).ready(function() {
 		$.ajax({
 				url: 'upsert.php',
 				type: 'POST',
-				dataType: 'JSON',
+				// dataType: 'JSON',
 				data: $("#frmEdit").serialize(),
 				success:function(response){
 					$("#msg").html(response);
+					console.log("gaga");
 					loadData();
 				},
-				// error: (jqXHR, errorMessage, error) => {
-				// 	$("#sucMsg").html("error");
-				// }
+				error: (jqXHR, errorMessage, error) => {
+					$("#sucMsg").html("error");
+					console.log("gugu");
+				}
 			});
 		$("#messageModal").modal('show');
 	});
