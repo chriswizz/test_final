@@ -8,14 +8,11 @@
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
     integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="../CSS/styles.css">
   <link rel="stylesheet" type="text/css" href="../CSS/mainstyle.css">
-  <link rel="stylesheet" type="text/css" href="../CSS/codefactory.css">
-  <link rel="stylesheet" type="text/css" href="../CSS/landing_page.css">
-  	<!-- Own CSS -->
-	<link rel='stylesheet' type='text/css' href='../CSS/news_feed.css'>
-	<!-- Magnific CSS -->
-	<link rel='stylesheet' type='text/css' href='../CSS/magnific-popup.css'>
+  	<!-- Add CSS -->
+	<link rel='stylesheet' type='text/css' href='<?php echo $addCSS ?>'>
+	<!-- Add CSS 2-->
+	<link rel='stylesheet' type='text/css' href='<?php echo $addCSS2 ?>'>
   <title><?= $title ?></title>
 </head>
 

@@ -1,5 +1,7 @@
 <?php
 $title = "News";
+$addCSS = "../CSS/news_feed.css";
+$addCSS2 = "../CSS/magnific-popup.css";
 include_once "../Components/head.php";
 include_once "../Components/navbar.php";
 // include_once "../Components/header.php";
